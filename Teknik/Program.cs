@@ -1,10 +1,20 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Teknik;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/GirisYap/Login";
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 
 var app = builder.Build();
-
+builder.Services.AddDbContext<DbContext>();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

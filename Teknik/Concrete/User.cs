@@ -1,7 +1,10 @@
-﻿namespace Teknik.Concrete
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Teknik.Concrete
 {
     public class User
     {
+        [Key]
         public int Id { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }

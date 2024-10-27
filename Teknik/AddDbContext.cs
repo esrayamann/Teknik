@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using Teknik.Concrete;
 
 namespace Teknik
 {
     public class AddDbContext:DbContext
     {
+        //public AddDbContext(DbContextOptions<AddDbContext> options) : base(options) { }//chat
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=LAPTOP-IEH31APK;database=TeknikServis;user id=sa;password=1234;TrustServerCertificate=True;");
@@ -19,7 +22,7 @@ namespace Teknik
             //    .HasOne(a => a.User)
             //    .WithMany(u => u.Basvurular)
             //    .HasForeignKey(a => a.UserId);
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

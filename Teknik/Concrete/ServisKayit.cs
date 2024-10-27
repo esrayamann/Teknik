@@ -2,6 +2,7 @@
 {
     public class ServisKayit
     {
+        public int Id {  get; set; }
         public int SicilNo { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
