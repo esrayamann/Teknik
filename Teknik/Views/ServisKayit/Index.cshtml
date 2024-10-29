@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>ServisKayit</h2>
+<table>
+    <tr>
+        <th>Sicil Numarası</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Telefon Numarası</th>
+        <th>Email</th>
+        <th>İlgilenen</th>
+        <th>Arıza</th>
+        <th>Durum</th>
+        <th>Birim</th>
+        <th>Bölüm</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var kayit in Model)
+    {
+        <tr>
+            <td>@kayit.SicilNo</td>
+            <td>@kayit.Ad</td>
+            <td>@kayit.Soyad</td>
+            <td>@kayit.TelNo</td>
+            <td>@kayit.Email</td>
+            <td>@kayit.İlgilenen</td>
+            <td>@kayit.Arıza</td>
+            <td>@kayit.Durum</td>
+            <td>@kayit.Birim</td>
+            <td>@kayit.Bölüm</td>
+            <td>@kayit.Tarih</td>
+            <td>
+                <a asp-action="Guncelle" asp-route-id="@kayit.Id">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+
